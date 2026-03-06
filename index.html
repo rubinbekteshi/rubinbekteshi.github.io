@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="hi! i'm rubin, a student at harvard college double concentrating in computer science and mathematics. in my free time, i'm a piano player, translator, reader, and traveler."
+        />
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
         <title>rubin bekteshi</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1652,6 +1657,17 @@
                     .getElementById("lFr")
                     .classList.toggle("active", lang === "fr");
                 localStorage.setItem("rb-lang", lang);
+                var metaDesc = document.querySelector(
+                    'meta[name="description"]',
+                );
+                if (metaDesc) {
+                    metaDesc.setAttribute(
+                        "content",
+                        lang === "fr"
+                            ? "salut ! je suis rubin, étudiant à l'université harvard avec une double spécialisation en informatique et mathématiques. pendant mon temps libre, je suis pianiste, traducteur, lecteur et voyageur."
+                            : "hi! i'm rubin, a student at harvard college double concentrating in computer science and mathematics. in my free time, i'm a piano player, translator, reader, and traveler.",
+                    );
+                }
                 buildNameLetters();
             }
             (function () {
